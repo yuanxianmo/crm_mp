@@ -1,0 +1,14 @@
+<!--pages/login/index.wxml-->
+<view class='main'>
+   <view class='logo'>
+      <image src='../../assets/images/logo.png' mode='widthFix'></image>
+      <text>贤俊龙CRM系统</text>
+   </view>
+   <view class='wrap'>
+      <view class='input-wrap'>
+         <input placeholder='请输入您的账号'></input>
+         <input placeholder='请输入您的密码'></input>
+      </view>
+      <button>登录</button>
+   </view>
+</view>

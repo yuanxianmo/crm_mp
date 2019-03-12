@@ -1,0 +1,10 @@
+/**app.wxss**/
+
+page {
+   min-height: 100%;
+   font-size: 14px;
+}
+
+view, input, button {
+   box-sizing: border-box;
+}

@@ -1,0 +1,12 @@
+{
+   "pages": [
+      "pages/index/index",
+      "pages/login/index"
+   ],
+   "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "贤俊龙CRM系统",
+      "navigationBarTextStyle": "black"
+   }
+}

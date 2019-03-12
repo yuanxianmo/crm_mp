@@ -1,0 +1,134 @@
+// pages/login/index.js
+const app = getApp();
+Page({
+   /**
+    * 页面的初始数据
+    */
+   data: {
+      username: "",
+      password: "",
+      errorMSG: "",
+      apiStatus: "ready",
+   },
+   login() {
+      var that = this;
+      if (this.username == '' || this.password == '') {
+         wx.showToast({
+            title: '请输入账号名和密码！',
+         })
+         return;
+      }
+      this.setData({
+         apiStatus: "working"
+      });
+      this.ajax({
+         url: "/oauth/token",
+         type: "get",
+         data: {
+            username: that.data.username,
+            password: that.data.password,
+            grant_type: "password",
+            scope: "server",
+            type: "login"
+         },
+         headers: {
+            "Authorization": "Basic c3VwZXJraW5kOnN1cGVya2luZA=="
+         },
+         success(res) {
+            switch (res.code) {
+               case "1":
+                  that.setData({
+                     errorMSG: res.msg,
+                     apiStatus: "error"
+                  });
+                  break;
+               case undefined:
+                  that.setData({
+                     apiStatus: "verified"
+                  });
+                  wx.setStorageSync("access_token", res.access_token);
+                  app.getUserInfo(
+                     function() {
+                        app.getPermissions(
+                           function() {
+                              that.apiStatus = "success";
+                              wx.redirectTo({
+                                 url: '/pages/index/index',
+                              })
+                           },
+                           function() {
+                              that.apiStatus = "error"
+                           }
+                        )
+                     },
+                     function() {
+                        that.apiStatus = "error"
+                     }
+                  );
+                  // if (that.$root.loginBack) {
+                  //     that.$root.loginBack = false;
+                  //     that.$router.back();
+                  // } else {
+                  // }
+                  break;
+            }
+         },
+         error() {
+            that.apiStatus = "ready";
+         }
+      });
+   },
+   /**
+    * 生命周期函数--监听页面加载
+    */
+   onLoad: function(options) {},
+
+   /**
+    * 生命周期函数--监听页面初次渲染完成
+    */
+   onReady: function() {
+
+   },
+
+   /**
+    * 生命周期函数--监听页面显示
+    */
+   onShow: function() {
+
+   },
+
+   /**
+    * 生命周期函数--监听页面隐藏
+    */
+   onHide: function() {
+
+   },
+
+   /**
+    * 生命周期函数--监听页面卸载
+    */
+   onUnload: function() {
+
+   },
+
+   /**
+    * 页面相关事件处理函数--监听用户下拉动作
+    */
+   onPullDownRefresh: function() {
+
+   },
+
+   /**
+    * 页面上拉触底事件的处理函数
+    */
+   onReachBottom: function() {
+
+   },
+
+   /**
+    * 用户点击右上角分享
+    */
+   onShareAppMessage: function() {
+
+   }
+})

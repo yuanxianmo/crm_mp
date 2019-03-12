@@ -1,0 +1,61 @@
+/* pages/login/index.wxss */
+
+page {
+   height: 100%;
+}
+
+.main {
+   --mainColor: #4484f3;
+   background-color: var(--mainColor);
+   padding-top: 50px;
+   height: 100%;
+}
+
+.logo {
+   text-align: center;
+   color: white;
+   margin-bottom: 40px;
+}
+
+.logo image {
+   width: 80px;
+   height: auto;
+   margin-bottom: 5px;
+}
+
+.logo text {
+   display: block;
+   font-size: 18px;
+}
+
+.wrap {
+   background-color: white;
+   width: calc(100% - 40px);
+   border-radius: 10px;
+   margin: auto;
+   padding: 60px 30px;
+}
+
+.input-wrap {
+   margin-bottom: 50px;
+}
+
+.wrap input {
+   width: 100%;
+   background-color: #f1f3f8;
+   height: 50px;
+   padding: 0 25px;
+   border-radius: 25px;
+   font-size: 17px;
+}
+
+.wrap input:first-child {
+   margin-bottom: 25px;
+}
+
+.wrap button {
+   color: white;
+   height: 50px;
+   border-radius: 25px;
+   background-color: var(--mainColor);
+}
