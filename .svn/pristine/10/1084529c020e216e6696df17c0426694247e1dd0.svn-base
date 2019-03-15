@@ -1,0 +1,2 @@
+<!--modules/loadMore/loadMore.wxml-->
+<button class='loadMore' bindtap='emmit'>加载更多</button>

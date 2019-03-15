@@ -1,0 +1,11 @@
+/* modules/loadMore/loadMore.wxss */
+
+.loadMore {
+   padding: 15px 0;
+   color: white;
+   background-color: #333;
+   font-weight: normal;
+   border-radius: 0;
+   font-size: 16px;
+   line-height: normal;
+}

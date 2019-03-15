@@ -3,7 +3,7 @@ let nativePage = Page;
 let nativeComponent = Component;
 const config = {
    // 58:9090,161:8082,72:8082
-  apiBase: "http://192.168.1.58:9090"
+   apiBase: "http://192.168.1.58:9090"
 }
 
 function ajax(obj) {
