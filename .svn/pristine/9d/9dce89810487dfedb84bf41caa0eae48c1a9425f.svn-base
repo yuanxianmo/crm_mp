@@ -1,0 +1,24 @@
+/* modules/nav/nav.wxss */
+
+.nav-area {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   background-color: rgba(0, 0, 0, 0.3);
+}
+
+movable-area {
+   position: absolute;
+   width: 400px;
+   height: 100%;
+   top: 0;
+   left: -200px;
+}
+
+movable-view {
+   width: 210px;
+   height: 100%;
+   background-color: black;
+}

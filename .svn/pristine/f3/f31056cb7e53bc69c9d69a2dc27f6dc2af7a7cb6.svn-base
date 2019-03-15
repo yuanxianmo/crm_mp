@@ -1,0 +1,19 @@
+<!--pages/login/index.wxml-->
+<view class='main'>
+   <view class='logo'>
+      <image src='../../assets/images/logo.png' mode='widthFix'></image>
+      <text>贤俊龙CRM系统</text>
+   </view>
+   <view class='wrap'>
+      <view class='input-wrap'>
+         <input placeholder='请输入您的账号' bindinput='bindData' value='{{username}}' data-bind="username"></input>
+         <input placeholder='请输入您的密码' bindinput='bindData' value="{{password}}" data-bind="password" type='password'></input>
+      </view>
+      <button bindtap='login' wx:if="{{apiStatus=='ready'}}">登录</button>
+      <button bindtap='login' disabled='1' wx:elif="{{apiStatus=='working'}}">正在登录</button>
+      <button bindtap='login' disabled='1' wx:elif="{{apiStatus=='verified'}}">验证通过</button>
+      <button bindtap='login' disabled='1' wx:elif="{{apiStatus=='success'}}">登录成功</button>
+      <button bindtap='login' disabled='1' wx:else="{{apiStatus=='error'}}">{{errorMSG||"登录失败"}}</button>
+   </view>
+</view>
+<nav></nav>

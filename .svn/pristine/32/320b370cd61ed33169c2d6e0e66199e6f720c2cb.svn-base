@@ -1,0 +1,13 @@
+<!--modules/nav/nav.wxml-->
+<view class='nav-area' style="background-color:rgba(0,0,0,{{x/400}});width:{{x<=5?'10px':'100%'}}">
+   <movable-area>
+      <movable-view class='nav' direction="horizontal" inertia="true" friction="0.2" bindchange="change">
+         <view class='user'>
+            <image src="{{app.globalData.userInfo.userHeader}}"></image>
+            <text>{{app.globalData.userInfo.userName}}</text>
+            <text>{{app.globalData.userInfo.roleName}}</text>
+         </view>
+         <view></view>
+      </movable-view>
+   </movable-area>
+</view>

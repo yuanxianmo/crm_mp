@@ -1,0 +1,57 @@
+<!--modules/nav/nav.wxml-->
+<view class='nav-area' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+   <view class='nav-bg' style="background-color:rgba(0,0,0,{{x/400}});width:{{x<=5?'10px':'100%'}}" bindtap="hide"></view>
+   <view class="movable-area" style="transform:{{'translateX('+(x)+'px)'}};transition:{{transition?'all .2s':'all 0s'}}">
+      <scroll-view scroll-y="true" scroll-with-animation="{{true}}" class="movable-view nav" style="box-shadow:0 0 20px rgba(0,0,0,{{x*x/800}})">
+         <navigator class='user' url="/pages/personal/index">
+            <image src="{{'http://192.168.1.39/mz/images/demo1.jpg'||app.globalData.userInfo.userHeader}}" mode='aspectFill'></image>
+            <view class='text'>
+               <text class='userName'>{{app.globalData.userInfo.userName}}</text>
+               <text class='roleName'>{{app.globalData.userInfo.roleName}}</text>
+            </view>
+         </navigator>
+         <view class='menu'>
+            <view class='item {{page.route=="pages/index/index"?"current":""}}'>
+               <image src='../../assets/images/nav/home.png' mode='widthFix'></image>
+               <text>首页</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/customer.png' mode='widthFix'></image>
+               <text>客户</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/contact.png' mode='widthFix'></image>
+               <text>联系人</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/sharing.png' mode='widthFix'></image>
+               <text>公海池</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/business.png' mode='widthFix'></image>
+               <text>商机</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/contract.png' mode='widthFix'></image>
+               <text>合同与订单</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/reimburse.png' mode='widthFix'></image>
+               <text>公关报销</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/approval.png' mode='widthFix'></image>
+               <text>审批</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/blacklist.png' mode='widthFix'></image>
+               <text>黑名单</text>
+            </view>
+            <view class='item'>
+               <image src='../../assets/images/nav/report.png' mode='widthFix'></image>
+               <text>报表</text>
+            </view>
+         </view>
+      </scroll-view>
+   </view>
+</view>
